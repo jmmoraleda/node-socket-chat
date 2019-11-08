@@ -77,6 +77,7 @@ function renderizarMensajes(mensaje, yo) {
 
 }
 
+// Para conseguir que el scroll vaya bajando automaticamente a medida que vayamos escribiendo en la ventana del chat.
 function scrollBottom() {
 
     // selectors
@@ -108,6 +109,7 @@ divUsuarios.on('click', 'a', function() {
 
 });
 
+// Para estar pendiente cuando un usuario envíe un mensaje
 formEnviar.on('submit', function(e) {
 
     e.preventDefault();
@@ -122,7 +124,7 @@ formEnviar.on('submit', function(e) {
     }, function(mensaje) {
         txtMensaje.val('').focus();
         renderizarMensajes(mensaje, true);
-        scrollBottom();
+        scrollBottom(); // Colocamos el scroll en su posición correcta
     });
 
 
